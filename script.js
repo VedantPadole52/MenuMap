@@ -1,6 +1,7 @@
-// Enhanced JavaScript to dynamically add a menu item with additional functionality
+// Enhanced JavaScript to dynamically add a menu item and a signup form
 document.addEventListener('DOMContentLoaded', () => {
     const menuList = document.querySelector('.menu-list');
+    const formContainer = document.querySelector('.form-container');
 
     // Function to create a new menu item
     const createMenuItem = () => {
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2>Beverages</h2>
             <p>Tea, Coffee, Juice</p>
             <button class="remove-btn">Remove</button>
+
         `;
 
         // Add animation class
@@ -18,24 +20,37 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add event listener to the remove button
         newMenuItem.querySelector('.remove-btn').addEventListener('click', () => {
             menuList.removeChild(newMenuItem);
+        
         });
 
         menuList.appendChild(newMenuItem);
     };
 
-    // Call the function to create and add the menu item
+    // Function to create a signup form
+    function createSignupForm() {
+        const signupForm = document.createElement('form');
+        signupForm.className = 'signup-form';
+        signupForm.innerHTML = `
+            <h2>Signup</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Signup</button>
+            <button type="submit">
+            
+        `;
+
+        // Add event listener to handle form submission
+        signupForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert('Signup successful!');
+            // Here you can add logic to handle the signup data
+        });
+
+        formContainer.appendChild(signupForm);
+    }
+
+    // Call the functions to create and add the menu item and signup form
     createMenuItem();
-    
+    createSignupForm();
 });
-
-// CSS for fade-in animation (add this to your CSS file)
-/*
-.fade-in {
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
-}
-
-.menu-item {
-    opacity: 1;
-}
-*/
