@@ -3,65 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Menu</title>
+    <title>Welcome VEDANT Haven - Fine Dining Experience</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="menu-container">
-        <h1>Hotel Menu</h1>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h1>VEDANT Haven</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="animate-text">Experience Fine Dining</h1>
+            <p class="animate-text">Exquisite cuisine crafted with passion and served with elegance</p>
+            <a href="#menu" class="btn animate-text">Explore Menu</a>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-container">
+        <div class="section-header">
+            <h2>Our Menu</h2>
+            <p>Discover our chef's special selections</p>
+        </div>
+        
+        <div class="menu-categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="breakfast">Breakfast</button>
+            <button class="category-btn" data-category="lunch">Lunch</button>
+            <button class="category-btn" data-category="dinner">Dinner</button>
+            <button class="category-btn" data-category="desserts">Desserts</button>
+        </div>
+        
         <div class="menu-list">
-            <div class="menu-card">
-                <h2>Breakfast</h2>
-                <img src="https://th.bing.com/th/id/OIP.Qd8CILpJlBj7EoYqo6rsfAHaFj?w=256&h=192&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Breakfast items including Pancakes, Omelette, and Coffee" width="300">
-                <p>Pancakes, Omelette, Coffee</p>
-                <button class="order-btn">Order Now</button>
+            <div class="menu-card" data-category="breakfast">
+                <div class="menu-image">
+                    <img src="https://th.bing.com/th/id/OIP.Qd8CILpJlBj7EoYqo6rsfAHaFj?w=256&h=192&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Breakfast items including Pancakes, Omelette, and Coffee">
+                    <div class="price">$15.99</div>
+                </div>
+                <div class="menu-info">
+                    <h3>Breakfast Delight</h3>
+                    <p>Fluffy pancakes, gourmet omelette, and premium coffee</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.5)</span>
+                    </div>
+                    <button class="order-btn">Order Now</button>
+                </div>
             </div>
-            <div class="menu-card">
-                <h2>Lunch</h2>
-                <img src="https://th.bing.com/th/id/OIP.JrGmT25h5FNB2FghiJFlJgHaEq?w=304&h=192&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Lunch items including Grilled Chicken, Caesar Salad, and Lemonade" width="300">
-                <p>Grilled Chicken, Caesar Salad, Lemonade</p>
-                <button class="order-btn">Order Now</button>
+            
+            <div class="menu-card" data-category="lunch">
+                <div class="menu-image">
+                    <img src="https://th.bing.com/th/id/OIP.JrGmT25h5FNB2FghiJFlJgHaEq?w=304&h=192&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Lunch items including Grilled Chicken, Caesar Salad, and Lemonade">
+                    <div class="price">$22.99</div>
+                </div>
+                <div class="menu-info">
+                    <h3>Lunch Special</h3>
+                    <p>Herb-grilled chicken, fresh caesar salad, and homemade lemonade</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(5.0)</span>
+                    </div>
+                    <button class="order-btn">Order Now</button>
+                </div>
             </div>
-            <div class="menu-card">
-                <h2>Dinner</h2>
-                <img src="https://th.bing.com/th/id/OIP.dz-Qh84POQpc7WmCxUKmcwHaHa?w=193&h=193&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Dinner items including Steak, Mashed Potatoes, and Red Wine" width="300">
-                <p>Steak, Mashed Potatoes, Red Wine</p>
-                <button class="order-btn">Order Now</button>
+            
+            <div class="menu-card" data-category="dinner">
+                <div class="menu-image">
+                    <img src="https://th.bing.com/th/id/OIP.dz-Qh84POQpc7WmCxUKmcwHaHa?w=193&h=193&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Dinner items including Steak, Mashed Potatoes, and Red Wine">
+                    <div class="price">$34.99</div>
+                </div>
+                <div class="menu-info">
+                    <h3>Dinner Excellence</h3>
+                    <p>Prime cut steak, creamy mashed potatoes, and premium red wine</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(4.0)</span>
+                    </div>
+                    <button class="order-btn">Order Now</button>
+                </div>
             </div>
-            <div class="menu-card">
-                <h2>Desserts</h2>
-                <img src="https://th.bing.com/th/id/OIP.lnFuG8EsbWIag0-bwVQhewHaEo?w=313&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Desserts including Chocolate Cake, Ice Cream, and Fruit Salad" width="300">
-                <p>Chocolate Cake, Ice Cream, Fruit Salad</p>
-                <button class="order-btn">Order Now</button>
+            
+            <div class="menu-card" data-category="desserts">
+                <div class="menu-image">
+                    <img src="https://th.bing.com/th/id/OIP.lnFuG8EsbWIag0-bwVQhewHaEo?w=313&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Desserts including Chocolate Cake, Ice Cream, and Fruit Salad">
+                    <div class="price">$12.99</div>
+                </div>
+                <div class="menu-info">
+                    <h3>Sweet Indulgence</h3>
+                    <p>Rich chocolate cake, artisanal ice cream, and fresh fruit salad</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(4.7)</span>
+                    </div>
+                    <button class="order-btn">Order Now</button>
+                </div>
             </div>
-            <!-- New menu items will be added here by JavaScript -->
         </div>
         
         <div class="add-item-container">
             <button id="add-item-btn">Add Beverages Menu</button>
         </div>
-    </div>
+    </section>
 
-    <!-- Signup Form Section -->
-    <div class="signup-container">
-        <h2>Sign Up for Special Offers</h2>
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <h2>About Us</h2>
+            <p>Our story of culinary excellence</p>
+        </div>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://th.bing.com/th/id/OIP.Rl9R0QrLrUibYCl9BYnUxgHaE8?w=272&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Restaurant interior">
+            </div>
+            <div class="about-text">
+                <h3>A Passion for Fine Dining</h3>
+                <p>Founded in 2010, Gourmet Haven has been serving exquisite cuisine to food enthusiasts from around the world. Our team of award-winning chefs combines traditional techniques with innovative approaches to create unforgettable dining experiences.</p>
+                <p>We source only the freshest ingredients from local farmers and sustainable suppliers, ensuring that every dish not only tastes exceptional but also supports our community.</p>
+                <a href="#contact" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="signup-container">
+        <div class="section-header">
+            <h2>Join Our Culinary Community</h2>
+            <p>Sign up for exclusive offers and events</p>
+        </div>
         <form id="signup-form" class="signup-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
             
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
             
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
             
-            <button type="submit">Sign Up</button>
+            <div class="form-group">
+                <label for="preference">Dining Preference</label>
+                <select id="preference" name="preference">
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="all">All</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Special Requests</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Subscribe Now</button>
         </form>
-    </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2023 Hotel Menu. All rights reserved.</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Gourmet Haven</h3>
+                <p>Exquisite dining experience since 2010</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday: 8am - 10pm</p>
+                <p>Saturday - Sunday: 9am - 11pm</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Gourmet Street, Foodville</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@gourmethaven.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Gourmet Haven. All rights reserved.</p>
+        </div>
     </footer>
+
+    <div id="notification" class="notification"></div>
 
     <script src="script.js"></script>
 </body>
