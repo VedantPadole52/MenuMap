@@ -239,6 +239,61 @@ function showNotification(message) {
     }, 3000);
 }
 
+let cartItems = [];
+
+// Call this function when "Order Now" is clicked
+function addToCart(name, price) {
+    const numericPrice = parseFloat(price.replace('$', ''));
+    cartItems.push({ name, price: numericPrice });
+    renderBill();
+    showNotification(`${name} added to bill!`);
+}
+
+function renderBill() {
+    const listContainer = document.getElementById('active-items');
+    const subtotalEl = document.getElementById('bill-subtotal');
+    const taxEl = document.getElementById('bill-tax');
+    const totalEl = document.getElementById('bill-total');
+
+    if (cartItems.length === 0) {
+        listContainer.innerHTML = '<p class="empty-msg">Select items to generate bill</p>';
+        return;
+    }
+
+    // Render each item row
+    listContainer.innerHTML = cartItems.map((item, index) => `
+        <div class="cart-item-row">
+            <span>${item.name}</span>
+            <span>$${item.price.toFixed(2)}</span>
+            <button onclick="removeFromBill(${index})" style="background:none; border:none; color:red; cursor:pointer;">&times;</button>
+        </div>
+    `).join('');
+
+    // Calculations
+    const subtotal = cartItems.reduce((acc, item) => acc + item.price, 0);
+    const tax = subtotal * 0.05; // 5% Service Tax
+    const total = subtotal + tax;
+
+    subtotalEl.innerText = `$${subtotal.toFixed(2)}`;
+    taxEl.innerText = `$${tax.toFixed(2)}`;
+    totalEl.innerText = `$${total.toFixed(2)}`;
+}
+
+function removeFromBill(index) {
+    cartItems.splice(index, 1);
+    renderBill();
+}
+
+function processOrder() {
+    if (cartItems.length === 0) {
+        showNotification("Please select items first!");
+        return;
+    }
+    const finalAmount = document.getElementById('bill-total').innerText;
+    alert(`Order Confirmed!\nTotal Bill: ${finalAmount}\nThank you for visiting VEDANT Haven!`);
+    cartItems = []; // Clear after order
+    renderBill();
+}
 // Scroll animations
 function initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
@@ -300,3 +355,4 @@ function initScrollAnimations() {
         }
     });
 }
+
