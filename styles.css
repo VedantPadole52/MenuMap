@@ -627,3 +627,71 @@ section {
         min-width: 100%;
     }
 }
+/* Layout Container */
+.menu-app-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.menu-list { flex: 2; } /* */
+
+/* Billing Cart Styling */
+.billing-cart {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+    border-top: 5px solid var(--primary); /* */
+}
+
+.active-items-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* Bill Calculations */
+.bill-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    color: #555;
+}
+
+.total-highlight {
+    border-top: 2px solid #2c3e50;
+    padding-top: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #1a1a1a;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #27ae60;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover { background: #219150; }
