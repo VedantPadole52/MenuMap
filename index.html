@@ -36,6 +36,40 @@
         </div>
     </section>
 
+    <div class="menu-app-container">
+    <div class="menu-list">
+        </div>
+
+    <aside class="billing-cart" id="billing-cart">
+        <div class="cart-header">
+            <h3><i class="fas fa-receipt"></i> Your Bill</h3>
+        </div>
+        
+        <div id="active-items" class="active-items-list">
+            <p class="empty-msg">Select items to generate bill</p>
+        </div>
+
+        <div class="bill-calculations">
+            <div class="bill-line">
+                <span>Subtotal</span>
+                <span id="bill-subtotal">$0.00</span>
+            </div>
+            <div class="bill-line">
+                <span>Service Tax (5%)</span>
+                <span id="bill-tax">$0.00</span>
+            </div>
+            <div class="bill-line total-highlight">
+                <span>Total Amount</span>
+                <span id="bill-total">$0.00</span>
+            </div>
+        </div>
+
+        <button class="checkout-btn" onclick="processOrder()">
+            Place Order & Pay
+        </button>
+    </aside>
+</div>
+
     <section id="menu" class="menu-container">
         <div class="section-header">
             <h2>Our Menu</h2>
@@ -232,4 +266,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
